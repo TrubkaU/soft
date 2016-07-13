@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
@@ -108,6 +107,7 @@ public class MainPresenter extends MvpBasePresenter<MainView> {
                     place = new Place(country,city);
 
                     getView().initActionBar(city);
+                    getView().closeProgressBar();
                 }
             }
         } catch (IOException e) {
@@ -220,9 +220,15 @@ public class MainPresenter extends MvpBasePresenter<MainView> {
                 Collections.reverse(list);
                 statisticList.clear();
 
-                Iterator<Statistic> iterator = list.iterator();
-                for (int i=0;i<capacity && iterator.hasNext();i++) {
-                    statisticList.add(iterator.next());
+                int i=0;
+                for (Statistic statistic:list) {
+
+                    if (capacity > i) {
+                        statisticList.add(statistic);
+                    } else {
+                        DBHelper.getInstance().getStatisticDao().delete(statistic);
+                    }
+                    i++;
                 }
 
                 if (isViewAttached() && getView()!= null) {

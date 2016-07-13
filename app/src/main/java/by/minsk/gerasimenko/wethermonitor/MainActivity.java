@@ -135,7 +135,7 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
                     .setPositiveButton(R.string.positive_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            //MainActivity.this.finish();
+                            MainActivity.this.finish();
                         }
                     }).show();
         }
