@@ -1,4 +1,23 @@
 <resources>
-    <string name="app_name">WetherMonitor</string>
+    <string name="app_name">WeatherMonitor</string>
+
+    <string name="err_title">Warning</string>
+    <string name="err_message">Your Location Sharing is off</string>
+    <string name="positive_btn">OK</string>
+    <string name="negative_btn">CANCEL</string>
+
+    <string name="main_menu_item_1">update the location</string>
+    <string name="main_menu_item_2">update capacity</string>
+    <string name="main_menu_item_3">temperature units</string>
+
+    <string name="unit_wind_speed">m/s</string>
+
+    <string name="capacity_title">set the list capacity</string>
+    <string name="unit_title">set the unit of temperature</string>
+
+
+    
+
+    <string name="no_iternet_fail">No internet</string>
 
 </resources>

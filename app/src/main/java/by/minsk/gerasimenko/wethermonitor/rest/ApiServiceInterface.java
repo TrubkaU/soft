@@ -12,8 +12,13 @@ import retrofit2.http.Query;
 public interface ApiServiceInterface {
 
     @GET("weather")
-    Call<JsonObject> getWeatherBy(@Query("lat") double lat,
-                                  @Query("lon") double lng,
-                                  @Query("appid") String key);
+    Call<JsonObject> getWeatherByLocale(@Query("lat") double lat,
+                                        @Query("lon") double lng,
+                                        @Query("appid") String key);
+
+    @GET("weather")
+    Call<JsonObject> getWeatherByCity(@Query("q") String city,
+                                        @Query("appid") String key);
+
 
 }

@@ -1,4 +1,4 @@
-package by.minsk.gerasimenko.wethermonitor.rest;
+package by.minsk.gerasimenko.wethermonitor;
 
 /**
  * Created 11.07.2016.
